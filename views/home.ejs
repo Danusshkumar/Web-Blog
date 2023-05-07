@@ -1,0 +1,12 @@
+<%- include("partials/header"); -%>
+
+<h1> <%= heading %></h1>
+<p class = "homeContent"> <%= homeContent %> </p>
+
+<% postArr.forEach((post) => { %>
+   <h1><%= post.postTitle %></h1>
+   <% let link = "posts/" + post.postTitle%>
+   <p> <%= post.postBody.substring(0,100) + " ..." %> <a href = "posts/<%=post.postTitle%>" >Read More</a></p>
+<% }); %>
+
+<%- include("partials/footer"); -%>
